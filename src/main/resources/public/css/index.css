@@ -4,8 +4,9 @@ margin: 0;
 }
 
 .home{
-  background-image: url("../images/home.png")
-  background:red;
+  background-image: url("../../images/home.png");
+  background-image: url(../../images/home.png);
+  height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -183,4 +184,20 @@ margin: 0;
     margin-right:0;
     font-weight:600
   }
+}
+
+.btn-home{
+  background: #98BC65;
+  border: none;
+  padding: 10px 50px;
+  font-weight:600;
+
+}
+
+body{
+  height: 90vh;
+}
+
+.bunner{
+  padding-top: 20%;
 }
