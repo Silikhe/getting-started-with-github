@@ -27,8 +27,20 @@ public class App {
         System.out.println("Hey Silas");
 
         get("/",(request, response) -> {
-            Map<String,Object> model = new HashMap<String, Object>();
+            Map<String,Object> model = new HashMap<>();
             return new ModelAndView(model, "index.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        get("/animal-new", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            return new ModelAndView(model, "animal-new.hbs");
+        },new HandlebarsTemplateEngine());
+
+        get("/sightings", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            model.put("sightings", AllSightings.getAll());
+            model.put("animal", EndangeredAnimal.all());
+            return new ModelAndView(model, "sightings.hbs");
         }, new HandlebarsTemplateEngine());
 
     }

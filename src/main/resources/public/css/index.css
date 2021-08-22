@@ -1,6 +1,7 @@
 *{
 padding: 0;
 margin: 0;
+font-family: "Montserrat", sans-serif;
 }
 
 .home{
@@ -195,7 +196,7 @@ margin: 0;
 }
 
 body{
-  height: 90vh;
+  height: 83vh;
 }
 
 .bunner{
