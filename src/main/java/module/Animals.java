@@ -12,7 +12,7 @@ public class Animals extends Wildlife implements DatabaseManager{
         this.name = name;
         this.type = ANIMAL_TYPE;
         if (name.isEmpty()){
-            throw new IllegalArgumentException("Please enter the animal's name.");
+            throw new IllegalArgumentException("Please enter the animal name.");
         }
     }
 
