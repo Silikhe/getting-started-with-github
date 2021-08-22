@@ -10,13 +10,17 @@ An application that allows Rangers to track wildlife sightings(Both Endangered a
 * Launch Postgres via terminal with the command: psql
 
 ##### DATABASE SETUP
-* CREATE DATABASE wildlife_tracker;
-* \c wildlife_tracker
-* CREATE TABLE animals (id serial PRIMARY KEY, name text, danger text, health text, age text, location text);
-* CREATE TABLE animals (id serial PRIMARY KEY, animal id int, location text, rangername text, lastsighting timestamp);
-
+* For Psql:
+```
+ CREATE DATABASE wildlife_tracker;
+ CREATE TABLE sightings (id serial PRIMARY KEY, animalid int,location varchar,rangername varchar,lastseen timestamp);
+ CREATE TABLE animals (id serial PRIMARY KEY, name varchar,health varchar,age varchar, type varchar);
+```
+* Run the App (gradle run))
 ##### TEST DATABASE SETUP
-* CREATE DATABASE wildlife_tracker_test WITH TEMPLATE wildlife_tracker;
+```
+ CREATE DATABASE wildlife_tracker_test WITH TEMPLATE wildlife_tracker;
+```
 
 Make sure you have gradle, spark and PostgreSQL installed.
 ## Known Bugs

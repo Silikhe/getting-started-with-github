@@ -6,6 +6,7 @@
             {{#block "title" }}Wildlife Tracker{{/block}}
 
         </title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Sansita&display=swap" rel="stylesheet">
         <link rel='stylesheet' href='/css/app.css'>
@@ -14,34 +15,56 @@
     </head>
     <body>
 {{/block}}
-<div class="row">
-    <div class="col-md-6">
-        <ul class="nav justify-content-right mt-5">
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/"><h1>The Wildlife Tracker</h1></a>
-            </li>
-        </ul>
-    </div>
-    <div class="col-md-6">
-        <ul class="nav justify-content-end mt-5">
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/sightings">View Sightings</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/animals-form">Add Animal</a>
-            </li>
-        </ul>
-    </div>
-</div>
-<hr>
+        <nav class="navbar transparent navbar-inverse navbar-fixed-topnavbar navbar-expand-lg navbar-light shadow-sm bg-light fixed-top">
+            <div class="container"> <a class="navbar-brand d-flex align-items-center" href="#">
+                <span class="ml-3 font-weight-bold">Wildlife Tracker</span>
+                </a> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar4">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-<div class="container">
+
+                <div class="collapse navbar-collapse" id="navbar4">
+                    <ul class="navbar-nav mr-auto pl-lg-4">
+                        <li class="nav-item px-lg-2 active"> <a class="nav-link" href="#"> <span class="d-inline-block d-lg-none icon-width"><i class="fas fa-home"></i></span>Home</a> </li>
+                        <li class="nav-item px-lg-2"> <a class="nav-link" href="#"><span class="d-inline-block d-lg-none icon-width"><i class="fas fa-spa"></i></span>Services</a> </li>
+
+                        <li class="nav-item px-lg-2"> <a class="nav-link" href="#">
+                            <span class="d-inline-block d-lg-none icon-width">
+                                <i class="fa fa-envelope"></i>
+                            </span>Contact</a>
+                        </li>
+
+                        <li class="nav-item px-lg-2"> <a class="nav-link" href="#">
+                            <span class="d-inline-block d-lg-none icon-width">
+                                <i class="fa fa-envelope"></i>
+                            </span>Contact</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav mr-auto mt-3 mt-lg-0">
+                        <li class="nav-item"> <a class="nav-link" href="#">
+                            <i class="fa fa-twitter"></i><span class="d-lg-none ml-3">Twitter</span>
+                        </a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="#">
+                            <i class="fa fa-facebook"></i><span class="d-lg-none ml-3">Facebook</span>
+                        </a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="#">
+                            <i class="fa fa-instagram"></i><span class="d-lg-none ml-3">Instagram</span>
+                        </a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="#">
+                            <i class="fa fa-linkedin"></i><span class="d-lg-none ml-3">Linkedin</span>
+                        </a> </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+
+
+<div class="home">
     <!--begin main template-->
 
-    <div class="col-md-12">
+    <div class="col-md-12 home">
         {{#block "content"}}
         {{/block}}
 
@@ -49,9 +72,26 @@
 </div>
 {{#block "footer"}}
     </div>
-    <footer class="footer">
-        <div class="container">
+    <!-- Site footer -->
+    <footer class="site-footer">
 
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-6 col-xs-12">
+                    <p class="copyright-text">Copyright &copy; 2021 All Rights Reserved by
+                        <a href="https://silsilas.github.io/portf/">Silikhe</a>.
+                    </p>
+                </div>
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <ul class="social-icons">
+                        <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+                        <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </footer>
     </body>

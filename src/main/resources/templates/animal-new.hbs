@@ -1,0 +1,73 @@
+{{#partial "styles"}}
+    <link rel="stylesheet" href="/css/animal-form.css">
+    <link rel="stylesheet" href="/css/index.css">
+{{/partial}}
+
+{{#partial "content"}}
+    <div class="containermt-5">
+        <div class="wrapper">
+            <div class="container card">
+                <form action="/sightings" method="POST">
+                    <p class="text-center">Sighting</p>
+                    <div class=" form-row row">
+                        <div class="form-group col-md-6">
+                            <input type="text" class="form-control" id="Animal">
+                            <label for="Animal">Animal Name</label>
+                            <div class="line"></div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <input type="text" class="form-control" id="Animal">
+                            <label for="Ranger">Ranger Name</label>
+                            <div class="line"></div>
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <select id="inputState" class="form-control">
+                            <option >Location</option>
+                            <option value="North">North</option>
+                            <option value="South">South</option>
+                            <option value="East ">East</option>
+                        </select>
+                        <label for="inputState">Location</label>
+                        <div class="line"></div>
+                    </div>
+                    <div class="form-group ">
+                        <select id="inputState" class="form-control">
+                            <option >Health</option>
+                            <option value="health">Health</option>
+                            <option value="ill">Ill</option>
+                            <option value="okay ">Okay</option>
+                        </select>
+                        <label for="inputState">Health</label>
+                        <div class="line"></div>
+                    </div>
+                    <div class="form-row row">
+                        <div class="form-group col-md-6">
+                            <select id="inputState" class="form-control">
+                                <option value="newborn">Newborn</option>
+                                <option value="young">Young</option>
+                                <option value="adult">Adult</option>
+                            </select>
+                            <label for="inputState">Newborn</label>
+                            <div class="line"></div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <select id="inputState" class="form-control">
+                                <option >Animal Type</option>
+                                <option value="animal">Normal Animal</option>
+                                <option value="endangered">Endangered Animal</option>
+                            </select>
+                            <label for="inputState">Animal Type</label>
+                            <div class="line"></div>
+                        </div>
+                    </div>
+                     <div class="text-center pb-3">
+                         <button type="submit" class="btn btn-home rounded-pill pb-2 mt-2">Submit</button>
+                     </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{{/partial}}
+{{> layout.hbs}}
