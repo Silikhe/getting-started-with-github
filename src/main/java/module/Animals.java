@@ -12,7 +12,7 @@ public class Animals extends Wildlife implements DatabaseManager{
         this.name = name;
         this.type = ANIMAL_TYPE;
         if (name.isEmpty()){
-            throw new IllegalArgumentException("Please enter the animal name.");
+            throw new IllegalArgumentException("Please enter the animal's name.");
         }
     }
 
@@ -49,17 +49,17 @@ public class Animals extends Wildlife implements DatabaseManager{
     public static List<Object> getAnimals() {
         List<Object> allAnimals = new ArrayList<Object>();
 
-        try(Connection con = DB.sql2o.open()) {
+        try(Connection connection = DB.sql2o.open()) {
             String sqlFire = "SELECT * FROM animals WHERE id=:id AND type='animal';";
-            List<Animals> animals = con.createQuery(sqlFire)
+            List<Animals> animals = connection.createQuery(sqlFire)
                     .throwOnMappingFailure(false)
                     .executeAndFetch(Animals.class);
             allAnimals.addAll(animals);
 
             String sqlWater = "SELECT * FROM animals WHERE id=:id AND type='endangered-animal';";
-            List<Endangeredanimal> endangeredAnimals = con.createQuery(sqlWater)
+            List<EndangeredAnimal> endangeredAnimals = connection.createQuery(sqlWater)
                     .throwOnMappingFailure(false)
-                    .executeAndFetch(Endangeredanimal.class);
+                    .executeAndFetch(EndangeredAnimal.class);
             allAnimals.addAll(endangeredAnimals);
         }
 
