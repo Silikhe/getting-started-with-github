@@ -57,9 +57,9 @@ public class Animals extends Wildlife implements DatabaseManager{
             allAnimals.addAll(animals);
 
             String sqlWater = "SELECT * FROM animals WHERE id=:id AND type='endangered-animal';";
-            List<Endangeredanimal> endangeredAnimals = connection.createQuery(sqlWater)
+            List<EndangeredAnimal> endangeredAnimals = connection.createQuery(sqlWater)
                     .throwOnMappingFailure(false)
-                    .executeAndFetch(Endangeredanimal.class);
+                    .executeAndFetch(EndangeredAnimal.class);
             allAnimals.addAll(endangeredAnimals);
         }
 
