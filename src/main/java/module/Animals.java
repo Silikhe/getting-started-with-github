@@ -7,28 +7,12 @@ import java.util.List;
 
 public class Animals extends Wildlife implements DatabaseManager{
     public static final String ANIMAL_TYPE = "animal";
-    private int danger;
 
     public Animals(String name){
         this.name = name;
         this.type = ANIMAL_TYPE;
         if (name.isEmpty()){
-            throw new IllegalArgumentException("Please enter the animal name.");
-        }
-    }
-
-    public void save(){
-        try(Connection con = DB.sql2o.open()) {
-            String sql = "INSERT INTO animals (id, name, type, health, age) VALUES (:id, :name, :type, :health, :age)";
-            this.id = (int) con.createQuery(sql, true)
-                    .addParameter("id", this.id)
-                    .addParameter("name", this.name)
-                    .addParameter("type",this.type)
-                    .addParameter("health",this.health)
-                    .addParameter("age",this.age)
-                    .throwOnMappingFailure(false)
-                    .executeUpdate()
-                    .getKey();
+            throw new IllegalArgumentException("Please enter the animal's name.");
         }
     }
 
@@ -65,15 +49,15 @@ public class Animals extends Wildlife implements DatabaseManager{
     public static List<Object> getAnimals() {
         List<Object> allAnimals = new ArrayList<Object>();
 
-        try(Connection con = DB.sql2o.open()) {
+        try(Connection connection = DB.sql2o.open()) {
             String sqlFire = "SELECT * FROM animals WHERE id=:id AND type='animal';";
-            List<Animals> animals = con.createQuery(sqlFire)
+            List<Animals> animals = connection.createQuery(sqlFire)
                     .throwOnMappingFailure(false)
                     .executeAndFetch(Animals.class);
             allAnimals.addAll(animals);
 
-            String sqlWater = "SELECT * FROM animals WHERE id=:id AND type='animal';";
-            List<Endangeredanimal> endangeredAnimals = con.createQuery(sqlWater)
+            String sqlWater = "SELECT * FROM animals WHERE id=:id AND type='endangered-animal';";
+            List<Endangeredanimal> endangeredAnimals = connection.createQuery(sqlWater)
                     .throwOnMappingFailure(false)
                     .executeAndFetch(Endangeredanimal.class);
             allAnimals.addAll(endangeredAnimals);
