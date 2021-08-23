@@ -196,9 +196,13 @@ font-family: "Montserrat", sans-serif;
 }
 
 body{
-  height: 83vh;
+  height: 100%;
 }
 
 .bunner{
   padding-top: 20%;
+}
+
+.nav-link{
+ color:red;
 }
