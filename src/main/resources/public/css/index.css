@@ -189,9 +189,19 @@ font-family: "Montserrat", sans-serif;
 
 .btn-home{
   background: #98BC65;
-  border: none;
+  border: 2px #98BC65 solid ;
   padding: 10px 50px;
   font-weight:600;
+  color: #f1f1f1;
+
+}
+
+.btn-home:hover{
+  background: none;
+  border: 2px #98BC65 solid ;
+  padding: 10px 50px;
+  font-weight:600;
+  color: #98BC65;
 
 }
 
@@ -200,9 +210,47 @@ body{
 }
 
 .bunner{
-  padding-top: 20%;
+  padding-top: 10%;
+  height: 85vh;
 }
 
-.nav-link{
- color:red;
+.navbar-brand {
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: capitalize;
+  padding-left: 50px;
+  color: #fff;
+}
+
+.navbar ul {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.navbar ul li a:hover {
+  color: #fff !important;
+}
+
+.navbar ul li {
+  margin-left: 10px;
+}
+
+.navbar ul li a {
+  color: #111029 !important;
+}
+
+.title{
+  font-size: 48px;
+  font-weight: bold;
+
+}
+
+.index-p{
+ font-size: 17px;
+ color: #36454F	;
+}
+
+.sight{
+  padding-top: 10%;
+  height: 85vh;
 }
