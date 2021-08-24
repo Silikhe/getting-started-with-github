@@ -1,19 +1,26 @@
-
+{{#partial "styles"}}
+    <link rel="stylesheet" href="/css/animal-form.css">
+    <link rel="stylesheet" href="/css/index.css">
+{{/partial}}
 {{#partial "content"}}
-    <div class="container">
+    <div class="p-5 sight pb-5">
+
         <div class="row">
             {{#each sightings}}
                 <div class="col-md-3">
-                    <div class="card" style="  width: 20rem;">
+                    <div class="card mb-3" style="width: 18rem;">
+
                         <div class="card-body">
-                            <h4 class="card-title">Animal: {{name}}</h4>
-                            <h6 class="card-subtitle mb-2">Ranger Name: {{rangerName}}</h6>
-                            <p class="card-text">Location: {{location}}</p>
-                            <p class="card-text">Health: {{health}}</p>
-                            <p class="card-text text-danger">Age: {{age}}</p>
-                            <a href="#" class="card-link text-danger">Type: {{type}}</a>
-                            <a href="#" class="card-link text-warning">Posted: {{lastSeen}}</a>
+                            <h5 class="card-title">Tracking animal <i>{{name}}</i> </h5>
                         </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><strong>Animal: </strong>{{name}}</li>
+                            <li class="list-group-item"><strong>Ranger Name: </strong>{{rangerName}}</li>
+                            <li class="list-group-item"><strong>Location: </strong>{{location}}</li>
+                            <li class="list-group-item"><strong>Health: </strong>{{health}} Normal</li>
+                            <li class="list-group-item"><strong>Type: </strong>{{type}}</li>
+                            <li class="list-group-item"><strong>Posted: </strong>{{lastSeen}}</li>
+                        </ul>
                     </div>
                 </div>
             {{/each}}
