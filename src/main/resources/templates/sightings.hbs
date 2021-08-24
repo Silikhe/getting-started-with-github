@@ -3,23 +3,25 @@
     <link rel="stylesheet" href="/css/index.css">
 {{/partial}}
 {{#partial "content"}}
-    <div class="container sight">
+    <div class="p-5 sight pb-5">
 
         <div class="row">
             {{#each sightings}}
-                <div class="card" style="width: 18rem;">
+                <div class="col-md-3">
+                    <div class="card mb-3" style="width: 18rem;">
 
-                    <div class="card-body">
-                        <h5 class="card-title">Tracking animal <i>{{name}}</i> </h5>
+                        <div class="card-body">
+                            <h5 class="card-title">Tracking animal <i>{{name}}</i> </h5>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><strong>Animal: </strong>{{name}}</li>
+                            <li class="list-group-item"><strong>Ranger Name: </strong>{{rangerName}}</li>
+                            <li class="list-group-item"><strong>Location: </strong>{{location}}</li>
+                            <li class="list-group-item"><strong>Health: </strong>{{health}}</li>
+                            <li class="list-group-item"><strong>Type: </strong>{{type}}</li>
+                            <li class="list-group-item"><strong>Posted: </strong>{{lastSeen}}</li>
+                        </ul>
                     </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><strong>Animal: </strong>{{name}}</li>
-                        <li class="list-group-item"><strong>Ranger Name: </strong>{{rangerName}}</li>
-                        <li class="list-group-item"><strong>Location: </strong>{{location}}</li>
-                        <li class="list-group-item"><strong>Health: </strong>{{health}}</li>
-                        <li class="list-group-item"><strong>Type: </strong>{{type}}</li>
-                        <li class="list-group-item"><strong>Posted: </strong>{{lastSeen}}</li>
-                    </ul>
                 </div>
             {{/each}}
         </div>
